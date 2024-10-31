@@ -8,19 +8,16 @@ extension VimTerminalKit {
     public enum InputType {
         /// A Vim-style navigation input (hjkl keys)
         case vim(Direction)
-
         /// An arrow key navigation input
         case arrow(Direction)
-
         /// The Enter key
         case enter
-
         /// The Space key
         case space
-
+        /// The Backspace key
+        case backspace
         /// The quit command (q or Q)
         case quit
-
         /// An unrecognized or unsupported input
         case unknown
     }

@@ -15,6 +15,10 @@ let package = Package(
         .library(
             name: "VimTerminalKit",
             targets: ["VimTerminalKit"]
+        ),
+        .executable(
+            name: "FileExplorer",
+            targets: ["FileExplorer"]
         )
     ],
     targets: [
@@ -24,5 +28,9 @@ let package = Package(
             name: "VimTerminalKitTests",
             dependencies: ["VimTerminalKit"]
         ),
+        .executableTarget(
+            name: "FileExplorer",
+            dependencies: ["VimTerminalKit"]
+        )
     ]
 )

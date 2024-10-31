@@ -21,6 +21,8 @@ extension VimTerminalKit {
         ///         print("Vim up key (k) pressed")
         ///     case .arrow(.down):
         ///         print("Down arrow key pressed")
+        ///     case .backspace:
+        ///         print("Backspace key pressed")
         ///     case .quit:
         ///         return
         ///     default:
@@ -41,13 +43,14 @@ extension VimTerminalKit {
                 case 0x44: return .arrow(.left)
                 default: return .unknown
                 }
-            case 0x6B: return .vim(.up)  // k
-            case 0x6A: return .vim(.down)  // j
+            case 0x6B: return .vim(.up)    // k
+            case 0x6A: return .vim(.down)   // j
             case 0x6C: return .vim(.right)  // l
-            case 0x68: return .vim(.left)  // h
+            case 0x68: return .vim(.left)   // h
             case 0x0A, 0x0D: return .enter
             case 0x20: return .space
-            case 0x71, 0x51: return .quit  // q or Q
+            case 0x7F: return .backspace    // Delete/Backspace key
+            case 0x71, 0x51: return .quit   // q or Q
             default: return .unknown
             }
         }

@@ -1,21 +1,24 @@
 import Foundation
 
-// Sources/VimTerminalKit/Navigation/Navigator.swift
-
 public extension VimTerminalKit {
-    /// Manages navigation state and handles movement through a grid-based interface.
+    /// Manages navigation state and handles movement through a list or grid-based interface.
     ///
-    /// The Navigator class provides a way to handle selection state in a grid layout,
-    /// supporting both single and multi-column arrangements. It automatically handles
-    /// wrapping, bounds checking, and cross-column navigation.
+    /// The Navigator class provides a way to handle selection state in both single-column
+    /// and multi-column layouts. For single-column layouts (like file explorers), set
+    /// `columnsCount` to 1. For grid layouts (like menus), use 2 or more columns.
     ///
-    /// Example usage:
+    /// Example usage (Single Column):
     /// ```swift
-    /// let navigator = Navigator(itemCount: 10, columnsCount: 2)
+    /// // File explorer style navigation
+    /// let navigator = Navigator(itemCount: 10, columnsCount: 1)
+    /// navigator.navigate(.vim(.down)) // Moves down one item
+    /// ```
     ///
-    /// // Navigate through items
-    /// navigator.navigate(.vim(.down))
-    /// print("Selected: \(navigator.selectedIndex)")
+    /// Example usage (Multi Column):
+    /// ```swift
+    /// // Menu style navigation with two columns
+    /// let navigator = Navigator(itemCount: 10, columnsCount: 2)
+    /// navigator.navigate(.vim(.right)) // Moves to next column
     /// ```
     final class Navigator {
         /// The currently selected item index.
@@ -25,9 +28,11 @@ public extension VimTerminalKit {
         public private(set) var selectedColumn: Int
 
         /// The total number of items that can be navigated.
-        private let itemCount: Int
+        private var itemCount: Int
 
         /// The number of columns to arrange items in.
+        /// Set to 1 for single-column layouts (file explorers),
+        /// or 2+ for grid layouts (menus).
         private let columnsCount: Int
 
         /// Creates a new navigator instance.
@@ -35,6 +40,7 @@ public extension VimTerminalKit {
         /// - Parameters:
         ///   - itemCount: The total number of items that can be selected
         ///   - columnsCount: The number of columns to arrange items in (default: 2)
+        ///                   Use 1 for single-column layouts like file explorers
         ///   - initialIndex: The starting selected index (default: 0)
         ///   - initialColumn: The starting selected column (default: 0)
         public init(itemCount: Int, columnsCount: Int = 2, initialIndex: Int = 0, initialColumn: Int = 0) {
@@ -42,6 +48,17 @@ public extension VimTerminalKit {
             self.columnsCount = columnsCount
             self.selectedIndex = initialIndex
             self.selectedColumn = initialColumn
+        }
+
+        /// Updates the total number of items and adjusts selection if necessary.
+        ///
+        /// - Parameter count: The new total number of items
+        public func updateItemCount(_ count: Int) {
+            itemCount = count
+            if selectedIndex >= count {
+                selectedIndex = max(0, count - 1)
+            }
+            selectedColumn = 0
         }
 
         /// Processes a navigation input and updates the selection state.
