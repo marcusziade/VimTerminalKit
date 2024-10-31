@@ -1,5 +1,8 @@
 # VimTerminalKit
 
+![VimTerminalKit-logo-small](https://github.com/user-attachments/assets/7b5ab343-2fae-44c8-868a-95633fae7ac3)
+
+
 A Swift package that brings Vim-style navigation and powerful terminal UI capabilities to your command-line applications.
 
 ## Features
