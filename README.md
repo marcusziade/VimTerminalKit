@@ -130,6 +130,7 @@ default:
 ## Complete Examples
 
 ### 1. **See** a full CLI app example named 'FileExplorer' under `/Sources`
+![CleanShot 2024-10-31 at 20 24 41](https://github.com/user-attachments/assets/b6eacaba-9284-4018-811d-86418f66f476)
 
 ### 2. File Explorer Implementation
 
