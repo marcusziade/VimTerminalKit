@@ -130,7 +130,9 @@ default:
 
 ## Complete Examples
 
-### 1. File Explorer Implementation
+### 1. **See** a full CLI app example named 'FileExplorer' under `/Sources`
+
+### 2. File Explorer Implementation
 
 ```swift
 final class Explorer {
@@ -184,7 +186,7 @@ final class Explorer {
 }
 ```
 
-### 2. Menu Implementation
+### 3. Menu Implementation
 
 ```swift
 struct MenuApp {
@@ -305,4 +307,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Inspired by Vim's navigation system
 - Built with Swift's modern concurrency features
-- Thanks to all contributors!
