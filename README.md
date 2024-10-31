@@ -12,7 +12,6 @@ A Swift package that brings Vim-style navigation and powerful terminal UI capabi
 - ⌨️ Raw terminal mode handling
 - 🎨 Terminal control sequences
 - 🔧 Async operation support
-- 📱 Clean, SwiftUI-like API
 
 ## Installation
 
@@ -22,7 +21,7 @@ Add VimTerminalKit to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yourusername/VimTerminalKit.git", from: "1.0.0")
+    .package(url: "https://github.com/marcusziade/VimTerminalKit.git", from: "1.0.0")
 ]
 ```
 
