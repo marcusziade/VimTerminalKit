@@ -1,6 +1,7 @@
 import Foundation
 import VimTerminalKit
 
+/// This is an example app using VimTerminalKit.
 @main
 struct FileExplorer {
     static func main() {
