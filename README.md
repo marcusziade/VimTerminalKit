@@ -1,6 +1,9 @@
 # VimTerminalKit
 
-![VimTerminalKit-logo-small](https://github.com/user-attachments/assets/7b5ab343-2fae-44c8-868a-95633fae7ac3)
+![VimTerminalKit-logo-small](https://github.com/user-attachments/assets/7b5ab343-2fae-44c8-868a-95633fae7ac3) <br>
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fmarcusziade%2FVimTerminalKit%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/marcusziade/VimTerminalKit)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fmarcusziade%2FVimTerminalKit%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/marcusziade/VimTerminalKit)
+
 
 A Swift package that brings Vim-style navigation and powerful terminal UI capabilities to your command-line applications. Create interactive terminal UIs with ease, supporting both single-column layouts (like file explorers) and multi-column layouts (like menus).
 
